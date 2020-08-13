@@ -2,13 +2,15 @@
 using namespace std;
 #define max 10
 #define endl "\n"
-int main(){
-    
+int main() {
+
     //to take faster input
-    ios_base :: sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int a[max] = {0};
+    int a[max] = {
+        0
+    };
 
     //size of an array
     cout << sizeof(a) << "\n";
