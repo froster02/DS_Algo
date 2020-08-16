@@ -30,4 +30,5 @@ int main() {
 
     cout << "Maximum : " << large << "\nMinimum : " << small << endl;
 
+    return 0;
 }

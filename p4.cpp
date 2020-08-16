@@ -29,4 +29,6 @@ int main() {
     cin >> key;
 
     cout << key << " Key found at index " << binarySearch(a, n, key) << endl;
+
+    return 0;
 }

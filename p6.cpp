@@ -13,6 +13,8 @@ void bubbleSort(int a[], int n) {
     }
 }
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int n, a[max];
     cin >> n;
     for (int i = 0; i < n; i++)
@@ -22,4 +24,6 @@ int main() {
 
     for (int i = 0; i < n; i++)
         cout << a[i] << "|";
+    
+    return 0;
 }
