@@ -4,14 +4,20 @@
 #define endl "\n"
 using namespace std;
 
-void subarray(int a[], int n) {
+//sum of largest sub array
+void subarraySum(int a[], int n) {
+    int maxSum = 0, currentSum = 0;
     for (int i = 0; i < n; i++) {
         for (int j = i; j < n; j++) {
-            for (int k = i; k <= j; k++)
-                cout << a[k] << "|";
+            currentSum = 0;
+            for (int k = i; k <= j; k++) {
+                currentSum += a[k];
+            }
+            if (currentSum > maxSum)
+                maxSum = currentSum;
         }
-        cout << endl;
     }
+    cout << maxSum << endl;
 }
 
 int main() {
@@ -23,10 +29,7 @@ int main() {
     for (int i = 0; i < n; i++)
         cin >> a[i];
 
-    subarray(a, n);
-
-    for (int i = 0; i < n; i++)
-        cout << a[i] << "|";
+    subarraySum(a, n);
 
     return 0;
 }
