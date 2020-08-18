@@ -8,12 +8,16 @@ int main() {
     cin.tie(NULL);
 
     //wave printing of a 2D array
-    int n, a[max][max], m;
-    cin >> n >> m;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++)
-            cin >> a[i][j];
+    int n, a[max][max] = {0}, m;
+    cout << "Enter Rows : ";
+    cin >> m;
+    cout << "Enter Column : ";
+    cin >> n;
+    for (int r = 0; r < m; r++) {
+        for (int c = 0; c < n; c++)
+            cin >> a[r][c];
     }
+
     for (int c = 0; c < n; c++) {
         //if column is even go Top -> Bottom
         if (c % 2 == 0) {
@@ -21,7 +25,7 @@ int main() {
                 cout << a[r][c] << ",";
         }
         //if column is odd go Bottom -> Top
-        if (c % 2 != 0) {
+        else {
             for (int r = m - 1; r >= 0; r--)
                 cout << a[r][c] << ",";
         }
