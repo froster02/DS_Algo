@@ -4,14 +4,13 @@ using namespace std;
 #define endl "\n"
 
 void rotateImage(int a[][max], int n){
-
+    `
     cout << "*******************";
     for(int j=n; j>=1; j--){
         for(int i=1; i<=n; i++)
             cout << a[i][j] << " ";
         cout << endl;
     }
-
 }
 
 int main() {
