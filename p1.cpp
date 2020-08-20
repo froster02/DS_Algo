@@ -1,7 +1,18 @@
 #include <iostream>
-using namespace std;
-#define max 10
+#include <cstdio>
+#include <stdio.h>
+#include <algorithm>
+#include <vector>
+#include <iterator>
+#include <map>
+#include <cmath>
+#include <bit>
+#include <climits>
+
+#define max 100
 #define endl "\n"
+using namespace std;
+
 int main() {
 
     //to take faster input
