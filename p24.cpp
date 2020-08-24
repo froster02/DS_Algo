@@ -9,7 +9,7 @@ using namespace std;
 void duplicate(char a[]) {
     int l = strlen(a);
 
-    if (l == 0 || l = = 0)
+    if (l == 0)
         return;
 
     int prev = 0;
