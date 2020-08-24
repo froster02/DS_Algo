@@ -43,11 +43,11 @@ int main(){
 
     char s[max] = "today is the first day of the week";
 
-    char *ptr = myStrtok(s, " ");
+    char *ptr = myStrtok(s, ' ');
     cout << ptr << endl;
 
     while(ptr != NULL){
-        ptr = myStrtok(NULL, " ");
+        ptr = myStrtok(NULL, ' ');
         cout << ptr << endl;
     }
 
