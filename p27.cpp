@@ -31,7 +31,7 @@ char *myStrtok(char * str, char delim) {
         else {
             output[i] = '\0';
             input = input + i + 1;
-            cout << "|" << input << "|";
+            //cout << "|" << input << "|";
             return output;
         }
     }
