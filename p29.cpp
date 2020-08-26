@@ -1,7 +1,6 @@
 //******************************************************||         ERROR        ||************************************************
-
 //sum of all submatrices of a given matrix (O^6)
-#include <iostream>s
+#include <iostream>
 #include <cstdio>
 #define max 100
 using namespace std;
@@ -18,12 +17,13 @@ int main() {
             cin >> a[i][j];
         }
     }
-    for (int li = 0; li < n; li++) {
-        for (int lj = 0; lj < n; lj++) {
-            for (int bi = li + 1; bi < n; bi++) {
-                for (int bj = lj + 1; bj < n; bj++) {
-                    for (int i = li; i <= bi; i++) {
-                        for (int j = lj; j <= bj; j++) {
+
+    for (int li = 0; li < n-1; li++) {
+        for (int lj = 0; lj < n-1; lj++) {
+            for (int bi = li + 1; bi < n-1; bi++) {
+                for (int bj = lj + 1; bj < n-1; bj++) {
+                    for (int i = li; i < bi; i++) {
+                        for (int j = lj; j < bj; j++) {
                             sum = sum + a[i][j];
                         }
                     }
