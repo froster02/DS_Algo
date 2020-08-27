@@ -3,7 +3,7 @@
 #define max 100
 using namespace std;
 void insertionSort(int a[], int n) {
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i < n; i++) {
         int temp = a[i];
         int j = i - 1;
         while (j >= 0 && a[j] > temp) {
