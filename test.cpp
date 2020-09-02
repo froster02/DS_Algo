@@ -4,26 +4,26 @@
 #define maximum 1000
 using namespace std;
 
-void fun(int a[][maximum], int n){
-	for(int j = n; j >= 1; j--){
-		for(int i = 1; i <= n; i++)
-			cout << a[i][j] << " ";
-		cout << endl;
-	}
+int compare(int a, int b) {
+	return a < b;
 }
 
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
-	int n, a[maximum][maximum];
-	cin >> n;
-	for(int i=1; i<=n; i++){
-		for(int j=1; j<=n; j++)
-			cin >> a[i][j];
-	}
-	
-	fun(a, n);
+	int tc = 0;
+	cin >> tc;
 
+	while (tc > 0) {
+		int n, a[maximum] = {0};
+		cin >> n;
+		for (int i = 0; i < n; i++)
+			cin >> a[i];
+
+		sort(a, a + n, compare);
+
+		for (int i = 0; i < n; i++)
+			cout << a[i];
+	}
 	return 0;
 }
