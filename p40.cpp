@@ -49,7 +49,7 @@ int main() {
     cin >> t;
 
     while (t > 0) {
-        int m, n, a[max];
+        int m , a[max];
         cin >> n >> m;
         for (int i = 0; i < n; i++)
             cin >> a[i];
