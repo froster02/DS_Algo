@@ -1,5 +1,5 @@
 /*cows in stalls*/
-
+/****************************************************didn't understand********************************************************/
 #include<iostream>
 #include<algorithm>
 #include<cstdio>
@@ -26,8 +26,8 @@ int main() {
 
 	int stall[] = {1,2,4,8,9};
 	int n = 5, cows = 3, ans = 0;
-	int s = 0, e = stall[n - 1] - stall[0];
 
+	int s = 0, e = stall[n - 1] - stall[0];
 	while(s <= e){
 		int mid = (s + e) / 2;
 		bool cowRakhPaye = canPlaceCows(stall, n, cows, mid);
