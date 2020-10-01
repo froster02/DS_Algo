@@ -19,21 +19,17 @@ bool isPossible(int a[], int n, int m, int curr_min) {
     return true;
 } 
 
-int find_pages(int a[], int n, int m) {
-    int sum = 0;
+int find_pages(int a[], int n, int m, int sum) {
     if (n < m)
         return -1;
-    for (int i = 0; i < n; i++)
-        sum += a[i];
     int s = a[n - 1], ans = INT_MAX, e = sum;
     while (s <= e) {
         int mid = (s + e) / 2;
         if (isPossible(a, n, m, mid)) {
             ans = min(ans, mid);
             e = mid - 1;
-        } else {
+        } else 
             s = mid + 1;
-        }
     }
     return ans;
 }
@@ -44,11 +40,13 @@ int main() {
     cin >> t;
     //FOR LOOP works faster than WHILE LOOP 
     for(int i=0; i<t; i++) {
-        int m , n, a[1000];
+        int m , n, a[1000], sum = 0;
         cin >> n >> m;
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++) {
             cin >> a[j];
-        cout << find_pages(a, n, m) << endl;
+			sum += a[j];
+		}
+        cout << find_pages(a, n, m, sum) << endl;
     }
 
     return 0;

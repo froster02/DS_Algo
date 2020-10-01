@@ -1,42 +1,59 @@
-#include<iostream>
-#include<algorithm>
-#include<cstdio>
-#define maximum 1000
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+#include <climits>
 using namespace std;
-
-bool canPlaceCows(int stall[], int n, int c, int min_sep){
-	int last_cow = stall[0];
-	int count = 1;
-	for(int i=1; i<n; i++){
-		if(stall[i] - last_cow >= min_sep){
-			last_cow = stall[i];
-			count++;
-			if(count == c)
-				return true;
-		}
-	}
-	return false;
+#define int long long int
+bool isvalid(int board[], int k, int n, int time) {
+    int painters = 1;
+    int ansi = 0;
+    for (int i = 0; i < n; i++) {
+        if (board[i] + ansi > time) {
+            ansi = board[i];
+            painters++;
+            if (painters > k) {
+                return false;
+            }
+        } else {
+            ansi += board[i];
+        }
+    }
+    return true;
 }
 
-int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
+int minTime(int board[], int n, int k) {
+    // sort(board,board+n);
+    int ans = -1;
+    int ms = 0;
+    int mini = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        ms += board[i];
+        mini = max(mini, board[i]);
+    }
+    int s = mini;
+    cout << "s" << s <<endl;
+    int e = ms;
+    cout << "e" << e << endl;
+    while (s <= e) {
+        int mid = (e + s) / 2;
 
-	int stall[] = {1,2,4,8,9};
-	int n = 5, cows = 3, ans = 0;
-	int s = 0, e = stall[n - 1] - stall[0];
+        if (isvalid(board, k, n, mid)) {
+            e = mid - 1;
+            ans = mid;
+        } else {
+            s = mid + 1;
+        }
+    }
+    return ans;
+}
 
-	while(s <= e){
-		int mid = (s + e) / 2;
-		bool cowRakhPaye = canPlaceCows(stall, n, cows, mid);
-		if(cowRakhPaye) {
-			ans = mid;
-			s = mid + 1;
-		}
-		else 
-			e = mid - 1;
-	}
-	cout << ans << endl;
-
-	return 0;
+int32_t main() {
+    int k, n;
+    cin >> k >> n;
+    int board[100005];
+    for (int i = 0; i < n; i++) {
+        cin >> board[i];
+    }
+    cout << minTime(board, n, k) << endl;
+    return 0;
 }
