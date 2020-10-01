@@ -1,3 +1,5 @@
+/*  let suppose a user want to book an OLA cab and he looks for the cabs nearby him on app, this program tells which can is
+nearest to him assuming the user be at (0,0) cordinate  */
 #include <iostream>
 #include <cstdio>
 #include <vector>
