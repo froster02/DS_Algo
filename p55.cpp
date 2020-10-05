@@ -1,4 +1,5 @@
 /* BITWISE -> set the bit n = 5 (0 1 0 1) */ 
+
 #include <iostream>
 #include <cstdio>
 #include <vector>

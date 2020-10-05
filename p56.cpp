@@ -1,4 +1,5 @@
 /* BITWISE -> clear (0 1 0 1) */ 
+
 #include <iostream>
 #include <cstdio>
 #include <vector>

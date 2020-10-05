@@ -1,4 +1,5 @@
 /* BITWISE -> find the ith bit of 5 from right hand side (0 1 0 1) */ 
+
 #include <iostream>
 #include <cstdio>
 #include <vector>

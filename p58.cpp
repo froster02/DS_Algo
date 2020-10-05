@@ -1,4 +1,5 @@
 /* BITWISE -> clearing range of bits from i to j */ 
+
 #include <iostream>
 #include <cstdio>
 #include <vector>

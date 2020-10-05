@@ -1,4 +1,5 @@
 /* BITWISE -> finding odd and even using */ 
+
 #include <iostream>
 #include <cstdio>
 #define IO ios_base::sync_with_stdio(false); cin.tie(NULL);
