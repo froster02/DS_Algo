@@ -1,0 +1,28 @@
+Recursion   :   https://www.youtube.com/watch?v=j8YbQLiwv-4&feature=emb_logo
+Graph       :   https://www.youtube.com/watch?v=ocKrb6TTyqI&feature=emb_logo
+Trees       :   https://www.youtube.com/watch?v=_9ZrvXxIhn8&feature=emb_logo
+Dynamic P   :   https://www.youtube.com/watch?v=DBOjCm7WJE4&feature=emb_logo
+DP2         :   https://www.youtube.com/watch?v=JrLXLSLC7t4&feature=emb_logo
+DP3         :   https://www.youtube.com/watch?v=D1STlYsZ8KU&feature=emb_logo
+KnapSack    :   https://www.youtube.com/watch?v=X7SrnbgqHHs&feature=emb_logo
+SegementTree:   https://www.youtube.com/watch?v=hHwzHGBoQuE&feature=emb_logo
+FenwickTree :   https://www.youtube.com/watch?v=DxN5-Y8Ld4c&feature=emb_logo
+CRX-AVL     :   https://www.youtube.com/watch?v=a96JFhw5Ee4&feature=emb_logo
+
+INTERVIEW
+
+codenation  :   https://www.youtube.com/watch?v=YlohqanoKmw&feature=emb_logo
+google      :   https://www.youtube.com/watch?v=wclSLQEvk3k&feature=emb_logo
+uber        :   https://www.youtube.com/watch?v=UPOavB58i_A&feature=emb_logo
+HSBC        :   https://www.youtube.com/watch?v=V3R5oXx69QY&feature=emb_logo
+hackerearth :   https://www.youtube.com/watch?v=1kzvgCnafgQ&feature=emb_logo
+flipkart    :   https://www.youtube.com/watch?v=hqWZgg0vf1c&feature=emb_logo
+americanEX  :   https://www.youtube.com/watch?v=XK1ikpBPz74&feature=emb_logo
+amazon      :   https://www.youtube.com/watch?v=W3pt5_bbOmI&feature=emb_logo
+offcampus   :   https://www.youtube.com/watch?v=Err6vvrp0SU&feature=emb_logo
+
+
+
+
+
+
