@@ -22,65 +22,24 @@ Sample Output
 17
 */
 
-// #include <iostream>
-// #include <cstdio>
-// #define IO ios_base::sync_with_stdio(false); cin.tie(NULL);
-// #define endl '\n'
-// using namespace std;
-
-// int findSetBits(int a, int b){
-//     int ans = 0;
-//     for(int i=a; i<=b; i++){
-//         while(i > 0){
-//             ans = ans + (i & 1);
-//             i = i >> 1;
-//         }
-//         i = a++;
-//     }
-//     return ans;
-// }
-
-// int main() {
-//     IO;
-
-//     int t;
-//     cin >> t;
-//     while(t > 0){
-//         int a, b;
-//         cin >> a >> b;
-//         cout << findSetBits(a, b) << endl;
-//     }
-
-//     return 0;
-// }
-
 #include <iostream>
-#include <cstdio>
-#define IO ios_base::sync_with_stdio(false); cin.tie(NULL);
 #define endl '\n'
 using namespace std;
 
 int main() {
-    IO;
-
-    int t, cnt[64] = {0};
+    int t;
     cin >> t;
     while(t > 0){
         int a, b;
         cin >> a >> b;
-        for(int i=a; i<=b;  ){
-            int j = 0;
+        int ans = 0;
+        for(int i = a; i <= b; i = a++){
             while(i > 0){
-                int last_bit = (i & 1);
-                cnt[j] = cnt[j] + last_bit;
-                j++;
-                i = i >> 1;
+                i = i & (a - 1);
+                ans++;
             }
-            i = a++;
         }
+        cout << ans << endl;
     }
-    for(int i=0; i<64; i++)
-        cout << cnt[i] << " " ;
-
     return 0;
 }
