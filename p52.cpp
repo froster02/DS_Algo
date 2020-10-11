@@ -1,5 +1,5 @@
-/* BITWISE -> finding of unique(non-repeating) number */ #include <iostream>
-
+/* BITWISE -> finding of unique(non-repeating) number */ 
+#include <iostream>
 #include <cstdio>
 #include <vector>
 #define IO ios_base::sync_with_stdio(false); cin.tie(NULL);
