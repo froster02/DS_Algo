@@ -31,13 +31,20 @@ using namespace std;
 int main() {
     IO;
 
-    int n, a[maxm];
+    int n, a[maxm], cnt[64] = {0};
     cin >> n;
     for(int i=0; i<n; i++){
-        int no;
         cin >> a[i];
+        int j = 0;
+        while (a[i] > 0) {
+            int last_bit = (a[i] & n);
+            cnt[i] = cnt[i] + last_bit;
+            j++;
+            a[i] = a[i] >> 1;
+        }
     }
-    
+    for(int i=0; i <n; i++)
+        cout << a[i] << " ";
 
     return 0;
 }
