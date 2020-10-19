@@ -9,7 +9,7 @@ void prime_sieve(int * p) {
     p[0] = p[1] = 0;
     p[2] = 1;
 
-    //first mark all odd number's prime
+    //first mark all odd number's prime as they could be potential prime numbers
     for (int i = 3; i <= maxm; i += 2)
         p[i] = 1;
 
