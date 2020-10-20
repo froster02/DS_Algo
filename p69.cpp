@@ -1,3 +1,4 @@
+//prime Factorisation (using optimised trail divisions)
 #include <iostream>
 #include <vector>
 using namespace std;

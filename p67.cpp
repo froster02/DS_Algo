@@ -1,3 +1,4 @@
+//prime sieve | Eratosthenes Sieve
 #include <iostream>
 #define maxm 1000005
 #define ll long long
