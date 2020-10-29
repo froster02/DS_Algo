@@ -4,17 +4,20 @@ using namespace std;
 
 //First Occurance of a number using recursion (method 1)
 int firstOcc1(int *a, int i, int n, int key){
+    //base case
     if(i == n){
         return -1;
     }
+    //base case
     if(a[i] == key){
         return i;
     }
     return firstOcc1(a, i + 1, n, key);
 }
 
-//First Occurance of a number using recursion (method 1)
+//First Occurance of a number using recursion (method 2)
 int firstOcc2(int *a, int n, int key){
+    //base case
     if(n == 0)
         return -1;
 
@@ -33,6 +36,7 @@ int lastOcc(int *a, int n, int key){
     //base case 
     if(n == 0)
         return -1;
+        
     //recursive case
     int i = lastOcc(a + 1, n - 1, key);
     if(i == -1){
