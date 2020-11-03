@@ -13,7 +13,7 @@ int fast_power(int a, int n){
     int smaller_ans = fast_power(a, n/2);
     smaller_ans = smaller_ans * smaller_ans;
 
-    if(n & 1)
+    if(n == 1)
         return (smaller_ans * a);
     return smaller_ans;
 }
@@ -29,3 +29,4 @@ int main(){
 
     return 0;
 }
+
