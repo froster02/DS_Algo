@@ -3,10 +3,10 @@
 #define maxm 10
 using namespace std;
 
-int bubbleSortR(int a[], int n){
+void bubbleSortR(int a[], int n){
     //base case
     if(n == 1)
-        return n;
+        return;
     //recursive case
     for(int j = 0; j < n - 1; j++){
         if(a[j] > a[j + 1]) 
@@ -39,7 +39,7 @@ int main() {
 
     cout << endl;
 
-    cout << bubbleSortR(a, n) << " ";
+    cout << bubbleSortR(a, n) << " "; 
 
     return 0;
 }
