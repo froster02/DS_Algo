@@ -29,29 +29,30 @@ void printSpelling(int n) {
     return;
 }
 
-// void printSpelling_reverse(int n){
-//     //base case 
-//     if(n == 0)
-//         return;
-//     //recursive case to first print (048)
-//     printSpelling_reverse(n / 10);
+void printSpelling_reverse(int n) {
+    //base case 
+    if (n == 0)
+        return;
+    //recursive case to first print (048)
+    printSpelling_reverse(n / 10);
 
-//     int digit = n % 10;
+    int digit = n % 10;
 
-//     cout << words[digit] << " ";
-//     return;
-// }
+    cout << words[digit] << " ";
+    return;
+}
+
 
 int main() {
 
     int n;
     cin >> n;
 
+    cout << "Print String to Digit : " << endl;
     printSpelling(n);
 
-    //printSpelling_reverse(n);
-
-    cout << endl;
+    cout << "Print String to Digit in Reverse : " << endl;
+    printSpelling_reverse(n);
 
     return 0;
 }
