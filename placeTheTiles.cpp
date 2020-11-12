@@ -5,7 +5,7 @@ int buildTheWall(int a, int b){
     //base case 
     if(b <= 3)
         return 1;
-    
+    //recursive call
     return buildTheWall(a, b - 1) + buildTheWall(a, b - 4);
 }
 
