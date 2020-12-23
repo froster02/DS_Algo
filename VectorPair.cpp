@@ -2,7 +2,6 @@
 nearest to him assuming the user be at (0,0) cordinate  */
 #include <iostream>
 #include <cstdio>
-#include <vector>
 #include <algorithm>
 #include <iterator>
 #define IO ios_base::sync_with_stdio(false); cin.tie(NULL);

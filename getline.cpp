@@ -10,6 +10,7 @@ int main() {
     cin.tie(NULL);
 
     //list of string into 2D character array
+    
     char a[max][max];
     int n;
     cin >> n;

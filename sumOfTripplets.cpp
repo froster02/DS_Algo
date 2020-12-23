@@ -5,7 +5,7 @@
 #define maximum 100
 using namespace std;
 
-//maximum sum of tripplets
+//maximum sum of tripplets array
 
 void fun(int a[], int n, int key) {
 

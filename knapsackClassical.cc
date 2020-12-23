@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void profit(int n, int c, int *wt, int *pr){
+int profit(int n, int c, int *wt, int *pr){
     
     //base case
     if(n==0 || c==0)
@@ -14,7 +14,6 @@ void profit(int n, int c, int *wt, int *pr){
     if(wt[n-1] <= c){
         include = pr[n-1] + profit(n-1, c - wt[n-1], wt, pr);
     }
-
     //exclude
     exclude = profit(n-1, c, wt, pr);
 
@@ -30,7 +29,7 @@ int main(){
 
     int n = 4, c = 7;
 
-    cout << profit(n, c, weight, price);
+    cout << profit(n, c, weight, price) << endl;
 
     return 0;
 }
