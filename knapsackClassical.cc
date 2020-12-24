@@ -29,7 +29,7 @@ int main(){
 
     int n = 4, c = 7;
 
-    cout << profit(n, c, weight, price) << endl;
+    cout << "Maximum Profit : " << profit(n, c, weight, price) << endl;
 
     return 0;
 }
