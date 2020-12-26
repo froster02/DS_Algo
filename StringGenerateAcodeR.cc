@@ -11,7 +11,7 @@ void generateString(char *in, char *out, int i, int j){
         return;
     }
 
-    //recursive case 
+    //RECURSIVE CASE//
 
     //one digit at a time
     int digit = in[i] - '0';
