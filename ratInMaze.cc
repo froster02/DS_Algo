@@ -15,7 +15,7 @@ bool ratInMaze(char maze[10][10], int solution[][10], int i, int j, int m, int n
             cout << endl;
         }
         cout << endl;
-        count++;
+    
         return true;
     }
 
