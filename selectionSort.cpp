@@ -9,7 +9,7 @@ void selectionSort(int a[], int n) {
     int i = 0, min_index = 0;
     for (i = 0; i < n - 1; i++) {
         min_index = i;
-        for (int j = i + 1; j < n; j++) {
+        for (int j = i; j < n ; j++) {
             if (a[j] < a[min_index])
                 min_index = j;
         }
@@ -33,4 +33,3 @@ int main() {
         cout << a[i] << "|";
 
     return 0;
-}
