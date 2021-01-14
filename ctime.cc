@@ -9,14 +9,13 @@ void bubble_sort(int a[], int n){
             if(a[j] > a[j + 1])
                 swap(a[j], a[j+1]);
         }
-        
     }
 }
 
 int main(){
     int n;
     cin >> n;
-    int a[100000];
+    int a[1000000];
 
     for(int i = 0; i < n;i++){
         a[i] = n - i;

@@ -1,6 +1,6 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
-
 void dnf_sort(int a[], int n){
     //very useful for sorting 0s, 1s, and 2s
     int low = 0;
@@ -28,7 +28,7 @@ void dnf_sort(int a[], int n){
 }
 
 int main(){
-
+    time_t start = clock();
     int a[] = {2,1,1,1,1,0,1,1,1,0,0,2,0};
     int n = sizeof(a) / sizeof(int);
 
@@ -36,8 +36,10 @@ int main(){
 
     for(int i : a)
         cout << i << "|";
-    
     cout << endl;
+    
+    time_t end = clock();
+    cout << end - start <<"ms"<< endl;
 
-    return 0;
+    return 0;    
 }
