@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
+#include <cstdio>
 #include <ctime>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
 using namespace std;
 
 void bubble_sort(int a[], int n){
@@ -13,6 +15,7 @@ void bubble_sort(int a[], int n){
 }
 
 int main(){
+
     int n;
     cin >> n;
     int a[100000];
@@ -27,13 +30,16 @@ int main(){
 
     cout << "Bubble Sort took : " << end - start << "ms";
 
-    for(int i = 0; i < n;i++){
+    for(int i = 0; i < n;i++) {
         a[i] = n - i;
     }
+
     start = clock();
     sort(a, a+n);
     end = clock();
 
     cout << "\nMerge Sort took  : " << end - start << "ms";
     cout << endl;
+
+    return 0;
 }
