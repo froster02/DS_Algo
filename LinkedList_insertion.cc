@@ -4,10 +4,10 @@ using namespace std;
 
 class node {
     public:
-    int data;
+        int data;
     node *next;
 
-    node(int d){
+    node(int d) {
         data = d;
         next = NULL;
     }
@@ -15,27 +15,27 @@ class node {
 
 /*  passing a pointer variable by Reference so that head value refelect in main also
     since by doing this *&head we have access of the actual head all the time */
-void insertAtHead(node *&head, int d){
-    if(head == NULL) {
+void insertAtHead(node *&head, int d) {
+    if (head == NULL) {
         head = new node(d);
         return;
     }
 
     node *newnode = new node(d);
-    newnode->next = head;
+    newnode -> next = head;
     head = newnode;
 
 }
-
-void print(node *head){
-    while(head != NULL){
-        cout << head->data<<"->";
-        head = head->next;
+//  head passing by value
+void print(node *head) {
+    while (head != NULL) {
+        cout << head -> data << "->";
+        head = head -> next;
     }
     cout << endl;
 }
 
-int main(){
+int main() {
     time_t s = clock();
 
     node *head = NULL;

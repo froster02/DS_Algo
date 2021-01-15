@@ -34,8 +34,7 @@ void IBK(node **head, int key, int k) {
         return;
     }
     node *itr = *head, *temp = newnode(key);
-    while(itr->next != NULL && itr->next->data != k){
-        itr = itr->next;
+    while(itr->next != NULL && itr->next->data != k)    itr = itr->next;
     temp->next = itr->next;
     itr->next = temp;
 }
