@@ -104,13 +104,35 @@ void deleteTail(node *head){
     delete tail;
 }
 
+void operator <<(ostream &os, node *head){
+    print(head);
+    return;
+}
+
+void reverse (node *&head) {
+    node *C = head;
+    node *P = NULL;
+    node *N;
+
+    while(C != NULL) {
+        //save the next node
+        N = C->next;
+        //make the current node point to p
+        C->next = P;
+        //update P & C take them 1 step forward
+        P = C;
+        C = N;
+    }
+    head = P;
+}
+
 int main() {
     node *head = NULL;
     int choice;
     char ch;
     int key;
     do{
-        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n";
+        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n";
         cout << "\nEnter choice : ";
         cin >> choice;
         switch(choice) {
@@ -124,17 +146,29 @@ int main() {
                 break;
             case 3:
                 print(head);
+                break;
             case 4:
                 length(head);
+                break;
             case 5:
                 cin >> key;
                 searchKey(head, key);
+                break;
             case 6:
                 deleteHead(head);
+                break;
             case 7:
                 deleteTail(head);
+                break;
+            case 8:
+                cout << head;
+                break;
+            case 9:
+                reverse(head);
+                break;
             default:
                 cout << "\nExiting...\n";
+                break;
         }
         cout << "\nContinue : (Y/N)";
         cin >> ch;
