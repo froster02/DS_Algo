@@ -152,13 +152,31 @@ node* middleElement(node *head){
     return slow;
 }
 
+//find the K'th node in the linked list from last
+void findNodeElement(node *head, int k) {
+    if(head == NULL)
+        return;
+
+    int len = length(head);
+    int point = len - k;
+
+    int count = 0;
+    node *ref_pointer = head;
+
+    while(count != point) {
+        ref_pointer = ref_pointer->next;
+        count++;
+    }
+    cout << ref_pointer->data;
+}
+
 int main() {
     node *head = NULL;
     int choice;
     char ch;
     int key;
     do{
-        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n10.Recursive Reversal\n11.Middle Node\n";
+        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n10.Recursive Reversal\n11.Middle Node\n12.Find node data from last\n";
         cout << "\nEnter choice : ";
         cin >> choice;
         switch(choice) {
@@ -199,6 +217,12 @@ int main() {
             {
                 node* mid = middleElement(head);
                 cout << mid->data << endl;
+                break;
+            }
+            case 12: 
+            {
+                cin >> key;
+                findNodeElement(head, key);
                 break;
             }
             default:
