@@ -126,7 +126,7 @@ void reverseLL (node *&head) {
     head = P;
 }
 
-void recursiveReverseLL(node *&head) {
+node* recursiveReverseLL(node *&head) {
     //samll ll
     if(head->next == NULL || head == NULL)
         return head;
@@ -138,13 +138,27 @@ void recursiveReverseLL(node *&head) {
     return small;
 }
 
+node* middleElement(node *head){
+    if(head->next == NULL || head == NULL)
+        return head;
+    
+    node *slow = head;
+    node *fast = head->next;
+
+    while(fast!=NULL && fast->next != NULL) {
+        fast = (fast->next)->next;
+        slow = slow->next;
+    }
+    return slow;
+}
+
 int main() {
     node *head = NULL;
     int choice;
     char ch;
     int key;
     do{
-        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n";
+        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n10.Recursive Reversal\n11.Middle Node\n";
         cout << "\nEnter choice : ";
         cin >> choice;
         switch(choice) {
@@ -160,7 +174,7 @@ int main() {
                 print(head);
                 break;
             case 4:
-                length(head);
+                cout << length(head);
                 break;
             case 5:
                 cin >> key;
@@ -181,12 +195,19 @@ int main() {
             case 10:
                 recursiveReverseLL(head);
                 break;
+            case 11:
+            {
+                node* mid = middleElement(head);
+                cout << mid->data << endl;
+                break;
+            }
             default:
-                cout << "\nExiting...\n";
+                cout << "\ninvalid input !\n";
                 break;
         }
         cout << "\nContinue : (Y/N)";
         cin >> ch;
     } while(ch == 'y' || ch == 'Y');
+    cout << "\nexiting...\n";
     return 0;
 }
