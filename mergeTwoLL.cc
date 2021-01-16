@@ -67,6 +67,8 @@ void printc(node *head){
     cout << endl;
 }
 
+
+
 int main(){
 
     cout << endl;
@@ -94,7 +96,15 @@ int main(){
     cout << "C : ";
     node *C = merge(A, B);
     printc(C);
-    cout << endl << endl;
+    cout << endl;
+
+    createLL_MergeSort(L, 3);
+    createLL_MergeSort(L, 1);
+    createLL_MergeSort(L, 8);
+    createLL_MergeSort(L, 2);
+    createLL_MergeSort(L, 15);
+
+    print()
 
     return 0;
 }
