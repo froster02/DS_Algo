@@ -59,25 +59,33 @@ node* merge(node *A, node *B){
     return C;
 }
 
+void printc(node *head){
+    while(head != NULL){
+        cout << head->data << "->";
+        head = head->next;
+    }
+    cout << endl;
+}
+
 int main(){
 
     cout << endl;
     node *A = NULL;
     node *B = NULL;
 
-    createLL_A(A,1);
-    createLL_A(A,3);
-    createLL_A(A,4);
     createLL_A(A,7);
+    createLL_A(A,4);
+    createLL_A(A,3);
+    createLL_A(A,1);
 
     cout << "A : ";
     print(A);
     cout << endl;
 
-    createLL_B(B,0);
-    createLL_B(B,2);
-    createLL_B(B,8);
     createLL_B(B,10);
+    createLL_B(B,8);
+    createLL_B(B,2);
+    createLL_B(B,0);
 
     cout << "B : ";
     print(B);
@@ -85,7 +93,7 @@ int main(){
 
     cout << "C : ";
     node *C = merge(A, B);
-    print(C);
+    printc(C);
     cout << endl << endl;
 
     return 0;
