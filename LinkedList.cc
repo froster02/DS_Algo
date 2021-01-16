@@ -109,7 +109,7 @@ void operator <<(ostream &os, node *head){
     return;
 }
 
-void reverse (node *&head) {
+void reverseLL (node *&head) {
     node *C = head;
     node *P = NULL;
     node *N;
@@ -124,6 +124,18 @@ void reverse (node *&head) {
         C = N;
     }
     head = P;
+}
+
+void recursiveReverseLL(node *&head) {
+    //samll ll
+    if(head->next == NULL || head == NULL)
+        return head;
+    //recursive case
+    node *small = recursiveReverseLL(head->next);
+
+    (head->next)->next = head;
+    head->next = NULL;
+    return small;
 }
 
 int main() {
@@ -164,7 +176,10 @@ int main() {
                 cout << head;
                 break;
             case 9:
-                reverse(head);
+                reverseLL(head);
+                break;
+            case 10:
+                recursiveReverseLL(head);
                 break;
             default:
                 cout << "\nExiting...\n";

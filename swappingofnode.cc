@@ -17,3 +17,19 @@ public:
         return head;
     }
 };
+
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+        ListNode *temp = head;
+        ListNode *c;
+        ListNode *p;
+        while(((temp->next)->val) != val){
+            temp = temp->next;
+        }
+        p = (temp->next);
+        c = (temp->next)->next;
+        
+        p->next = c;
+    }
+};
