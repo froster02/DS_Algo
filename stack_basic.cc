@@ -2,30 +2,34 @@
 #include <vector>
 using namespace std;
 
-class Stack {
-    private:
-        vector<int> v;
-    public:
-        void push(int data){
-            v.push_back(data);
-        }
-        bool empty(){
+//make it general by defining the typename 'Stack<int> s', the <int> will reflect as T
+template < typename T >
+
+    //stack class
+    class Stack {
+        private:
+            vector < T > v;
+        public:
+            void push(T data) {
+                v.push_back(data);
+            }
+        bool empty() {
             return v.size() == 0;
         }
-        void pop(){
-            if(!empty())
+        void pop() {
+            if (!empty())
                 v.pop_back();
         }
-        int top(){
+        T top() {
             return v[v.size() - 1];
         }
-};
+    };
 
-int main(){
+int main() {
 
-    Stack s;
+    Stack < int > s;
 
-    for(int i = 1; i <= 5; i++)
+    for (int i = 1; i <= 5; i++)
         s.push(i * 1);
 
     while (!s.empty()) {
