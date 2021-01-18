@@ -1,14 +1,12 @@
 #include <iostream>
-
 #include <stack>
-
 using namespace std;
 
 void stockSpan(int prices[], int n, int span[]) {
     stack < int > s;
     s.push(0);
 
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         int currentPrice = prices[i];
         while ((!s.empty()) && (prices[s.top()] <= currentPrice)) {
             s.pop();
@@ -25,19 +23,10 @@ void stockSpan(int prices[], int n, int span[]) {
 
 int main() {
     cout << endl;
-    int prices[] = {
-        100,
-        80,
-        60,
-        70,
-        60,
-        75,
-        85
-    };
+
+    int prices[] = {100,80,60,70,60,75,85};
     int n = sizeof(prices) / sizeof(int);
-    int span[100000] = {
-        0
-    };
+    int span[100000] = {0};
 
     stockSpan(prices, n, span);
     for (int i = 0; i < n; i++) {
