@@ -49,7 +49,6 @@ void rotateK(node *& head, int k) {
 
     while(k--) {
         p = p-> next;
-        c++;
     }
     node * temp = p;
     p = temp-> next;
