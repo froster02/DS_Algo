@@ -11,7 +11,7 @@ struct node {
     };
 };
 
-void push(int data){
+void push(node *&head, int data){
     if(head == NULL) {
         head = new node(data);
         return;

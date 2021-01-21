@@ -33,7 +33,6 @@ void insertAtHead(node *&head, int data) {
     node *newnode = new node(data);
     newnode -> next = head;
     head = newnode;
-
 }
 
 void insertAtTail(node *&head, int data) {
@@ -127,7 +126,7 @@ void reverseLL (node *&head) {
 }
 
 node* recursiveReverseLL(node *&head) {
-    //samll ll
+    //small ll
     if(head->next == NULL || head == NULL)
         return head;
     //recursive case
