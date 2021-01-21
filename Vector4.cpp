@@ -15,7 +15,7 @@ int main(){
     cin >> n;
     vector<int> v;
 
-    // to avoid doubling of memeory on pushing back new elements we use reserve() so that only after exceeding 100 it will double the memeory.
+    // to avoid doubling of memory on pushing back new elements we use reserve() so that only after exceeding 100 it will double the memeory.
     //v.reserve(100);
 
     for(int i=0; i<n; i++){
