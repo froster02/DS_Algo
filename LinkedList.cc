@@ -170,48 +170,21 @@ void findNodeElement(node *head, int k) {
     cout << ref_pointer->data;
 }
 
-//MERGE SORTING
-
-node* merge(node *A, node *B){
-    //base case
-    if(A == NULL)
-        return B;
-    if(B == NULL)
-        return A;
-    
-    //take a head pointer
-    node *C;
-
-    if((A->data) < (B->data)) {
-        C = A;
-        C->next = merge(A->next, B);
-    } else {
-        C = B;
-        C->next = merge(A, B->next);
+void deleteKey(node *&head, int key){
+    if(head == NULL || (head->data) == key){
+        return;
     }
-    return C;
-}
-
-node* mergesort(node *head) {
-    //base case
-    if(head == NULL || head->next == NULL)
-        return head;
-    
-    //rec case
-    //1. Break
-    node *mid = middleElement(head);
-    node *a = head;
-    node *b = mid->next;
-
-    mid->next = NULL;
-
-    //2. Rec sort the two part
-    a = mergesort(a);
-    b = mergesort(b);
-
-    //3. Merge 
-    node *c = merge(a, b);
-    return c;
+    node *temp = head;
+    node *p;
+    while(temp->next != NULL){
+        if((temp->next)->data == key){
+            p = temp->next;
+            temp->next = p->next;
+        }
+        temp = temp->next;
+    }
+    delete p;
+    return;
 }
 
 int main() {
@@ -220,7 +193,7 @@ int main() {
     char ch;
     int key;
     do{
-        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n10.Recursive Reversal\n11.Middle Node\n12.Find node data from last\n";
+        cout << "MENU :- \n1.Insertion At Head \n2.Insertion At Tail \n3.Print\n4.Length\n5.Search Key\n6.Delete Head\n7.Delate Tail\n8.Print Entire LL\n9.Reverse LL\n10.Recursive Reversal\n11.Middle Node\n12.Find node data from last\n13.Delete Key\n";
         cout << "\nEnter choice : ";
         cin >> choice;
         switch(choice) {
@@ -267,6 +240,12 @@ int main() {
             {
                 cin >> key;
                 findNodeElement(head, key);
+                break;
+            }
+            case 13:
+            {
+                cin >> key;
+                deleteKey(head, key);
                 break;
             }
             default:
