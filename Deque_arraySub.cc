@@ -19,7 +19,7 @@ int main(){
     deque<int> q(k);
     int i;
     for(i = 0; i < k; i++){
-        while(!q.empty() && a[i] > a[q.back()]){
+        while(!q.empty() && a[i] > a[q.back()]
             q.pop_back();
         }
         q.push_back(i);

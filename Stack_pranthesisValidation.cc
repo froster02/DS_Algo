@@ -7,7 +7,7 @@ bool isValid(char * s) {
 
     stack < char > stk;
 
-    for (int i = 0; i < '\0'; i++) {
+    for (int i = 0; s[i] != '\0'; i++) {
 
         //store every char in temporary variable for each iteration
         char ch = s[i];
@@ -27,7 +27,7 @@ bool isValid(char * s) {
                 return false;
             }
             //if '(' bracket is found already in stack then its a matching parenthesis so make the stack empty
-            stk.empty();
+            stk.pop();
         }
     }
     //at last remove all the allocation from stack
@@ -37,7 +37,7 @@ bool isValid(char * s) {
 int main() {
 
     cout << endl;
-    char s[50] = "((a+b)-(c+d-e))";
+    char s[50] = "(())";
 
     if (isValid(s))
         cout << "true";
