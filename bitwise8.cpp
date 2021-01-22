@@ -31,7 +31,7 @@ using namespace std;
 int main() {
     IO;
 
-    int n, a[maxm], cnt[64] = {0};
+    int n, a[maxi], cnt[64] = {0};
     cin >> n;
     for(int i=0; i<n; i++){
         cin >> a[i];

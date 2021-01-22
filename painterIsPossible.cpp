@@ -70,7 +70,7 @@ ll partitionFun(ll painter, ll board, ll length[], ll sum){
 int main(){
     IO;
 
-    ll painter, board, length[maxm], sum = 0;
+    ll painter, board, length[maxi], sum = 0;
     cin >> painter >> board;
     for(ll i = 0; i < board; i++){
         cin >> length[i];

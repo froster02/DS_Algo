@@ -35,7 +35,7 @@ void replacePi(char a[], int i) {
 
 int main() {
 
-    char a[maxm] = {0};
+    char a[maxi] = {0};
     cin >> a;
     replacePi(a, 0);
     cout << a << endl;

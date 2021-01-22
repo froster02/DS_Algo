@@ -17,7 +17,7 @@ vector<int > prime_sieve(int *p, int n) {
     //mark the square of numbers as not prime
     for(int i = 3; i <= n; i+= 2){
         if(p[i]){
-            for(int j = i * i; j <= maxm; j=j+i)
+            for(int j = i * i; j <= maxi; j=j+i)
                 p[j] = 0;
         }
     }
@@ -58,7 +58,7 @@ vector<int > factorize(int m, vector<int> &primes) {
 }
 
 int main(){
-    int p[maxm] = {0};
+    int p[maxi] = {0};
     vector<int > primes = prime_sieve(p, 100);
 
     int t;

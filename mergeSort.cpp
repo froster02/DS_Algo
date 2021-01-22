@@ -10,7 +10,7 @@ void merge(int * a, int s, int e) {
     int j = mid + 1;
     int k = s;
 
-    int temp[maxm];
+    int temp[maxi];
 
     while ((i <= mid) && (j <= e)) {
         if (a[i] < a[j])
@@ -47,7 +47,7 @@ void mergeSort(int a[], int s, int e) {
 int main() {
 
     int n;
-    int a[maxm];
+    int a[maxi];
 
     cin >> n;
     for (int i = 0; i < n; i++)

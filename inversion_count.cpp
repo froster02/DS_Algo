@@ -10,7 +10,7 @@ int merge(int *a, int s, int e){
     int j = mid + 1;
     
     int k = s;
-    int temp[maxm];
+    int temp[maxi];
     int count = 0;
 
     while((i<=mid) && (j <=e)){
@@ -54,7 +54,7 @@ int main(){
     int n;
     cin >> n;
 
-    int a[maxm];
+    int a[maxi];
     for(int i=0; i<n; i++)
         cin >> a[i];
 

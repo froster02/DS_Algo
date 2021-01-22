@@ -4,7 +4,7 @@
 using namespace std;
 int main(){
 
-    int t, ans[maxm] = {0};
+    int t, ans[maxi] = {0};
     cin >> t;
     int c = t;
     for(int i = 0; t > 0; t--){

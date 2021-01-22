@@ -16,13 +16,13 @@ vector<int > prime_sieve(int * p, int n) {
     p[2] = 1;
 
     //mark odd numbers as prime as they could be potential prime
-    for (int i = 3; i <= maxm; i = i + 2)
+    for (int i = 3; i <= maxi; i = i + 2)
         p[i] = 1;
 
     //mark square of possible prime numbers as not prime 
-    for (int i = 3; i <= maxm; i = i + 2) {
+    for (int i = 3; i <= maxi; i = i + 2) {
         if (p[i]) {
-            for (int j = 3; j <= maxm; j = j + i)
+            for (int j = 3; j <= maxi; j = j + i)
                 p[j] = 0;
         }
     }
@@ -62,7 +62,7 @@ vector<int > factorize(int m, vector<int > &prime){
 
 int main() {
 
-    int p[maxm] = {0};
+    int p[maxi] = {0};
     vector <int > prime = prime_sieve(p, 100);
 
     int t;

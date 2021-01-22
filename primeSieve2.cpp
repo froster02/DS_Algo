@@ -11,13 +11,13 @@ void prime_sieve(int * p) {
     p[2] = 1;
 
     //first mark all odd number's prime as they could be potential prime numbers
-    for (int i = 3; i <= maxm; i += 2)
+    for (int i = 3; i <= maxi; i += 2)
         p[i] = 1;
 
     //sieve
-    for (ll i = 3; i <= maxm; i = i + 2) {
+    for (ll i = 3; i <= maxi; i = i + 2) {
         if (p[i] == 1) {
-            for (ll j = i * i; j <= maxm; j = j + i)
+            for (ll j = i * i; j <= maxi; j = j + i)
                 p[j] = 0;
         }
     }
@@ -28,7 +28,7 @@ int main() {
 
     int n;
     cin >> n;
-    int p[maxm] = {0};
+    int p[maxi] = {0};
     prime_sieve(p);
     for (int i = 0; i <= n; i++)
         if (p[i] == 1)

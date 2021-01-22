@@ -2,10 +2,11 @@
 
 #include <iostream>
 #include <deque>
+#define maxm 100000
 using namespace std;
 int main(){
     int n;
-    int a[100000];
+    int a[maxi];
     int k;
 
     cin >> n;

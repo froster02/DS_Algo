@@ -30,7 +30,7 @@ void bubbleSort(int a[], int n) {
 
 int main() {
 
-    int n, a[maxm];
+    int n, a[maxi];
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
