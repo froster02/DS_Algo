@@ -8,7 +8,8 @@
         "vector": "cpp",
         "filesystem": "cpp",
         "iosfwd": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "deque": "cpp"
     },
     "compile-hero.disable-compile-files-on-did-save-code": true,
     "C_Cpp.errorSquiggles": "Disabled"

@@ -1,16 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// class node {
-//     public:
-//     int data;
-//     node *next;
-
-//     node (int d){
-//         data = d;
-//         next = NULL;
-//     }
-// };
 struct node {
     int data;
     node *next;
@@ -151,7 +141,7 @@ node* middleElement(node *head){
     return slow;
 }
 
-//find the K'th node in the linked list from last
+//find the Keth node in the linked list from last
 void findNodeElement(node *head, int k) {
     if(head == NULL)
         return;

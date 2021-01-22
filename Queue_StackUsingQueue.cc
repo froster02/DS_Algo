@@ -7,10 +7,10 @@ class Stack {
     queue<T> q1, q2;
 
 public:
-    void push(T x){
+    void insert(T x){
         q1.push(x);
     }
-    void pop(){
+    void remove(){
         //remove the last added element from q1
         //move first n-1 element in q2
         //interchange name of q1, q2
@@ -28,7 +28,8 @@ public:
         //swap name of q1 and q2
         swap(q1, q2);
     }
-    int top(){
+    
+    int displayTop(){
         while(q1.size() > 1){
             q2.push(q1.front());
             q1.pop();
@@ -39,7 +40,7 @@ public:
         q2.push(element);
 
         swap(q1, q2);
-        
+
         return element;
     }
 
@@ -54,13 +55,13 @@ public:
 int main(){
 
     Stack<int> s;
-    s.push(1);
-    s.push(2);
-    s.push(3);
+    s.insert(1);
+    s.insert(2);
+    s.insert(3);
 
     while(!s.empty()){
-        cout << s.top() << " ";
-        s.pop();
+        cout << s.displayTop() << " ";
+        s.remove();
     }
 
     return 0;
