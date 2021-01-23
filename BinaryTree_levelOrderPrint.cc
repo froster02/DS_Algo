@@ -49,13 +49,21 @@ void printKthLevel(node *root, int k){
     printKthLevel(root->right, k - 1);
 }
 
+void printLevelOrder(node *root){
+    for(int i = 0; i <= height(root); i++){
+        printKthLevel(root, i);
+        cout << endl;
+    }
+    return;
+}
+
 int main(){
 
     node *root = binaryTree();
     //8 10 1 -1 -1 6 9 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
     cout << height(root) << endl;
 
-    printKthLevel(root, 3);
+    printLevelOrder(root);
 
     return 0;
 }
