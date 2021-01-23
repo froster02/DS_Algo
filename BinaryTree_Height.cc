@@ -36,11 +36,26 @@ int height(node *root){
     return h;
 }
 
+void printKthLevel(node *root, int k){
+
+    if(root == NULL) return;
+
+    if(k == 1) {
+      cout << root->data << " ";
+      return;
+    }
+
+    printKthLevel(root->left, k - 1);
+    printKthLevel(root->right, k - 1);
+}
+
 int main(){
 
     node *root = binaryTree();
     //8 10 1 -1 -1 6 9 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
     cout << height(root) << endl;
+
+    printKthLevel(root, 3);
 
     return 0;
 }
