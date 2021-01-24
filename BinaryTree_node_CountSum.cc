@@ -2,13 +2,12 @@
 #include <queue>
 using namespace std;
 
-struct node{
+struct node {
     int data;
     node *left, *right;
-    
     node(int d){
         data = d;
-        *left = *right = NULL;
+        left = right = NULL;
     };
 };
 
@@ -16,7 +15,7 @@ node *buildTree(){
     int d;
     cin >> d;
 
-    if(d == -1) return 0;
+    if(d == -1) return NULL;
 
     node *root = new node(d);
     root->left = buildTree();
@@ -25,29 +24,34 @@ node *buildTree(){
     return root;
 }
 
-void bfs(node *root){
-    
-    queue<node *> q;
-    q.push(root);
+int count(node *root){
+    if(root == NULL) return 0;
+    int c = count(root->left) + count(root->right) + 1;
+    return c;
+}
 
+void bfs_Sum(node *root){
+    queue<node *> q;
+    int sum = 0;
+    q.push(root);
     while(!q.empty()){
         node *f = q.front();
-        cout << f->data << ", ";
+        sum = sum + (f->data);
         q.pop();
 
-        //if right and left are NULL
         if(f->left)  q.push(f->left);
-        if(f->right) q.push(f->right);    
+        if(f->right) q.push(f->right);
     }
-    return;
-    i
+    cout << sum;
 }
 
 int main(){
 
     node *root = buildTree();
     //8 10 1 -1 -1 6 9 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
-    bfs(root);
-    
+    cout << count(root) << endl;
+    bfs_Sum(root);
+    cout << endl;
+
     return 0;
 }
