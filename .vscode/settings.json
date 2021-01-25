@@ -13,5 +13,9 @@
         "ostream": "cpp"
     },
     "compile-hero.disable-compile-files-on-did-save-code": true,
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "cSpell.words": [
+        "ldiameter",
+        "rdiameter"
+    ]
 }
