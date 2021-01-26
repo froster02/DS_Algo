@@ -40,7 +40,6 @@ void bfs(node *root){
         if(f->right) q.push(f->right);    
     }
     return;
-    i
 }
 
 int main(){
