@@ -38,6 +38,7 @@ void bfs(node *root){
     }
     return;
 }
+    //! INSERTION IN BST AS RIGHT AND LEFT WILL BE CHECKED IN THIS INSERTION 
 
 //accepts the old root node & data & returns the new root node
 node *insertInBST(node *root, int data){
@@ -69,19 +70,10 @@ node *build_BST(){
     return root;
 }
 
-void inOrder(node *root){
-    if(root == NULL)
-        return;
-    inOrder(root->left);
-    cout << root->data << ",";
-    inOrder(root->right);
-}
-
 int main(){
 
     node *root = build_BST();
 
-    inOrder(root);
     cout << endl;
 
     bfs(root);
