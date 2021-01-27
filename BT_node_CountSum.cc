@@ -39,8 +39,8 @@ void bfs_Sum(node *root){
         sum = sum + (f->data);
         q.pop();
 
-        if(f->left)  q.push(f->left);
-        if(f->right) q.push(f->right);
+        if(f->left != NULL)  q.push(f->left);
+        if(f->right != NULL) q.push(f->right);
     }
     cout << sum;
 }

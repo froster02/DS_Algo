@@ -8,7 +8,7 @@ struct node{
     
     node(int d){
         data = d;
-        *left = *right = NULL;
+        left = right = NULL;
     };
 };
 
@@ -16,7 +16,8 @@ node *buildTree(){
     int d;
     cin >> d;
 
-    if(d == -1) return 0;
+    if(d == -1) 
+        return NULL;
 
     node *root = new node(d);
     root->left = buildTree();
