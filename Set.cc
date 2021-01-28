@@ -11,7 +11,7 @@ int main(){
     for(int i = 0; i < n; i++)
         s.insert(a[i]);
 
-    s.erase(7);
+    s.erase(6);
 
     for(set<int> :: iterator it = s.begin(); it != s.end(); it++)
         cout << *it << ", ";

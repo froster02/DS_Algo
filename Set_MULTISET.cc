@@ -1,10 +1,12 @@
 #include <iostream>
+
 #include <set>
+
 using namespace std;
 
-typedef multiset<int> :: iterator It;
+typedef multiset < int > ::iterator It;
 
-int main(){
+int main() {
 
     cout << endl;
 
@@ -12,12 +14,12 @@ int main(){
     //stored in a specific -> sorted according to internal comparison object
     // values once inserted cannot be modified
     // associative container - key (value)
-    // elements ar refered by the value not by the index
+    // elements are refered by the value not by the index
     // underliying inplementation is a BST
 
-    int a[] = {10,20,30,20,30,30,10,10,30,30};
-    int n = sizeof(a)/sizeof(int);
-    multiset<int> m(a, a+n);
+    int a[] = {10, 20, 30, 20, 30, 30, 10, 10, 30, 30};
+    int n = sizeof(a) / sizeof(int);
+    multiset < int > m(a, a + n);
 
     //erase - 20
     m.erase(10);
@@ -29,7 +31,7 @@ int main(){
     m.count(10);
 
     //iterate
-    for(int x : m)
+    for (int x : m)
         cout << x << ", ";
     cout << endl;
     cout << "count of 80 = " << m.count(80);
@@ -37,13 +39,13 @@ int main(){
 
     //find
     auto it = m.find(30);
-    cout << *it << endl;
+    cout << * it << endl;
 
     //get all elements which are equal to 30
-    pair<It, It> range = m.equal_range(30);
+    pair < It, It > range = m.equal_range(30);
 
-    for(auto it = range.first; it != range.second; it++)
-        cout << *it << " - ";
+    for (auto it = range.first; it != range.second; it++)
+        cout << * it << " - ";
 
     cout << endl;
 
