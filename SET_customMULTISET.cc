@@ -5,6 +5,12 @@ using namespace std;
 class person_compare {
     public:
 
+    //FIRST
+    // bool operator()(pair<string, int> p1, pair<string, int> p2) {
+    //     return p1.first < p2.first;
+    // }
+
+    //SECOND
     bool operator()(pair<string, int> p1, pair<string, int> p2) {
         return p1.second < p2.second;
     }
