@@ -86,10 +86,11 @@ void bfs(node *root){
 // and making left node point to NULL
 void flattenPreOrder(struct node* root)
 {
+    //! root -> left -> right
+
 	// base condition- return if root is NULL
 	// or if it is a leaf node
-	if (root == NULL || root->left == NULL &&
-						root->right == NULL) {
+	if (root == NULL || root->left == NULL && root->right == NULL) {
 		return;
 	}
 
@@ -101,19 +102,19 @@ void flattenPreOrder(struct node* root)
 		flattenPreOrder(root->left);
 	
 		// store the node root->right
-		struct node* tmpRight = root->right;
+		struct node* t1 = root->right;
 		root->right = root->left;
 		root->left = NULL;
 
 		// find the position to insert
 		// the stored value 
-		struct node* t = root->right;
-		while (t->right != NULL) {
-			t = t->right;
+		struct node* t2 = root->right;
+		while (t2->right != NULL) {
+			t2 = t2->right;
 		}
 
 		// insert the stored value
-		t->right = tmpRight;
+		t2->right = t1;
 	}
 
 	// now call the same function
