@@ -11,6 +11,8 @@ int main() {
     cout << a;
 }
 
+
+
 //BELOW CODE WILL RUN UPTO 20! ONLY
 
 // unsigned long long int fun(int x){

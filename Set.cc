@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-    int a[] = {1,2,3,5,4,6,6,7,8};
+    int a[] = {1,2,3, 3,5,4,6,6,7,8};
     int n = sizeof(a)/sizeof(int);
 
     set<int> s;
