@@ -1,34 +1,43 @@
 #include<iostream>
+#include <vector>
+#include <iterator>
+#include <algorithm>
 using namespace std;
 
-void sort1(int *a, int n) {
-    int shift = 0, comp = 0;
-    int i, j, max;
-    for (i = 1; i < n; i++) {
-        j = i - 1;
-        max = a[i];
-        while (a[j] > max && j >= 0) {
-            shift++;
-            comp++;
-            a[j + 1] = a[j];
-            j--;
-        }
-        shift++;
-        a[j + 1] = max;
+int thirdMax(vector < int > & v) {
+
+    sort(v.begin(), v.end());
+    vector<int> :: iterator it;
+    int l = v.size();
+    it = unique(v.begin(), v.begin() + l);
+
+    cout << endl;
+    for(vector<int> :: iterator it = v.begin(); it != v.end(); it++){
+        cout << *it << ", ";
     }
-    cout << "shift == " << shift << "  ";
-    cout << "comparision == " << comp << "  ";
+    cout << endl;
+
+
+    return -1;
 }
 
-int main() {
-    int n, i;
+int main(){
+
+    vector<int> v;
+    int n;
     cin >> n;
-    int a[n];
-    for (i = 0; i < n; i++) {
-        cin >> a[i];
+    for(int i = 0 ; i<n; i++){
+        int num;
+        cin >> num;
+        v.push_back(num);
     }
-    sort1(a, n);
-    for (i = 0; i < n; i++) {
-        cout << a[i] << " ";
-    }
+    //1 2 2 5 3 5
+
+    // for(vector<int> :: iterator it = v.begin(); it != v.end(); it++){
+    //     cout << *it << endl;
+    // }
+
+    cout << thirdMax(v);
+
+    return 0;
 }
