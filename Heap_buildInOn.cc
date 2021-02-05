@@ -2,7 +2,10 @@
 #include <vector>
 using namespace std;
 
-bool minHeap = false;
+//true : min heap
+//false : max heap
+
+bool minHeap = true;
 
 bool compare(int a, int b){
     if(minHeap)
