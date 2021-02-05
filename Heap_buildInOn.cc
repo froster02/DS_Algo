@@ -5,7 +5,7 @@ using namespace std;
 //true : min heap
 //false : max heap
 
-bool minHeap = true;
+bool minHeap = false;
 
 bool compare(int a, int b){
     if(minHeap)
@@ -47,6 +47,7 @@ int main(){
         cin >> e;
         v.push_back(e);
     }
+    //10 20 5 6 1 8 9 4
     buildHeapOptimized(v);
 
     for(vector<int> :: iterator it = v.begin(); it != v.end(); it++)
