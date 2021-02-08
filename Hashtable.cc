@@ -1,22 +1,19 @@
 #include <iostream>
+#include "Hashtable.h"
+#include <cstring>
 using namespace std;
 
-template<typename T>
+int main(){
 
-class Node{
+    HashTable<int> price_menu;
 
-public:
-    string key;
-    T value;
-    Node<T> *next;
+    price_menu.insert("Burger", 120);
+    price_menu.insert("Pepsi", 20);
+    price_menu.insert("pizza", 150);
+    price_menu.insert("noodle", 25);
+    price_menu.insert("Coke", 40);
 
-    Node(string key, T val){
-        this->key = key;
-        next = NULL;
-    }
-    ~Node(){
-        if(next != NULL){
-            delete next;
-        }
-    }
-};
+    price_menu.print();
+
+    return 0;
+}
