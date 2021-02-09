@@ -1,4 +1,5 @@
 //https://www.spoj.com/problems/BUSYMAN/
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -37,8 +38,6 @@ int main() {
         }
         cout << res << endl;
         v.clear();
-
-        return 0;
     }
     return 0;
 }
