@@ -11,7 +11,8 @@
         "new": "cpp",
         "deque": "cpp",
         "ostream": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "algorithm": "cpp"
     },
     "compile-hero.disable-compile-files-on-did-save-code": true,
     "C_Cpp.errorSquiggles": "Disabled",
