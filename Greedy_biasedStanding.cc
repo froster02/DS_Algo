@@ -1,3 +1,4 @@
+//*https://www.spoj.com/problems/BAISED/
 #include <iostream>
 #include <cstdlib>
 using namespace std;

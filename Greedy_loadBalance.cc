@@ -1,4 +1,4 @@
-//https://www.spoj.com/problems/BALIFE/
+//*https://www.spoj.com/problems/BALIFE/
 #include <iostream>
 using namespace std;
 
@@ -22,6 +22,7 @@ int main(){
             cout << "-1" << endl;
             continue;
         }
+        
         //find the load that is to be divided equally
         load = load / n;
 

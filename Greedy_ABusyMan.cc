@@ -1,5 +1,4 @@
-//https://www.spoj.com/problems/BUSYMAN/
-
+//*https://www.spoj.com/problems/BUSYMAN/
 #include <iostream>
 #include <algorithm>
 #include <vector>
