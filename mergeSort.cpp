@@ -1,5 +1,5 @@
 #include <iostream>
-#define maxm 100
+#define maxi 100
 using namespace std;
 
 void merge(int * a, int s, int e) {
