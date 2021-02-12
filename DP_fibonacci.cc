@@ -31,6 +31,20 @@ int fib(int n){
     return dp[n];
 }
 
+//method 4 (space optmization)  BOTTOM UP
+int fib(int n){
+    if(n == 0 || n == 1)
+        return n;
+    int a = 0, b = 1;
+    int c = 0;
+    for(int i = 2; i <= n; i++){
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}  
+
 int main(){
 
     int n, dp[maxm]; 
@@ -38,6 +52,7 @@ int main(){
 
     cout << fib(n) << endl;
     //cout << fib(n, dp) << endl;
+    //cout << fib(n) << endl;
     //cout << fib(n) << endl;
 
     return 0;
