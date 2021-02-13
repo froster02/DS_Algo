@@ -4,6 +4,7 @@
 #define maxm 100
 using namespace std;
 
+//  TOP DOWN
 int minCoins(int n, int coins[], int t, int dp[]){
     //base case
     if(n == 0)
@@ -25,6 +26,24 @@ int minCoins(int n, int coins[], int t, int dp[]){
     return dp[n];
 }
 
+//BUTTOM UP
+int minCoins2(int n, int coins[], int t){
+    int dp[100] = {0};
+    
+    //iterate over all states
+    for(int j = 1; j <= n; j++){
+        //initialize the current ans as int_max
+        dp[j] = INT_MAX;
+        for(int i = 0; i < t; i++){
+            if(j - coins[i] >= 0) {
+                int subprblm = dp[j - coins[i]];
+                dp[j] = min(dp[j], subprblm + 1);
+            }
+        }
+    }
+    return dp[n];
+}
+
 int main() {
 
     int n = 15;
@@ -33,6 +52,7 @@ int main() {
     int t = sizeof(coins) / sizeof(int);
 
     cout << minCoins(n, coins, t, dp) << endl;
+    cout << minCoins2(n, coins, t) << endl;
 
     return 0;
 }
