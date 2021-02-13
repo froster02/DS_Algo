@@ -10,7 +10,7 @@ int wine(int rate[], int i, int j, int y, int dp[][maxm]) {
     if (i > j)
         return 0;
     
-    //cornor case
+    //if dp[i][j] is already calculated
     if (dp[i][j] != 0)
         return dp[i][j];
 
