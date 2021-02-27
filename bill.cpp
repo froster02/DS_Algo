@@ -5,7 +5,6 @@ SECTION  : C
 */
 #include<iostream>
 #include<cstring>
-#include<conio.h>
 using namespace std;
 int main()
 {
@@ -42,5 +41,4 @@ int main()
 	cout<<"\t\t\t*******OUTPUT*******";
 	cout<<"\nCustomer : "<<name<<endl;
 	cout<<"Bill Amount : "<<bill;
-getch();
 }
