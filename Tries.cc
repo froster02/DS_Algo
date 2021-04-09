@@ -1,82 +1,65 @@
-#include <iostream> 
-#include <string>
-using namespace std; 
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 
-const int ALPHABET_SIZE = 26; 
+struct Trie {
+	bool lastWord;
+	unordered_map <char, Trie*> umap;
+};
 
-// trie node 
-struct node { 
-	struct node *children[ALPHABET_SIZE]; 
-	// isEndOfWord is true if the node represents 
-	// end of a word 
-	bool isEndOfWord; 
-}; 
+Trie *newNode(){
+	Trie *node = new Trie;
+	node->lastWord = false;
+	return node;
+}
 
-// Returns new trie node (initialized to NULLs) 
-struct node *buildNode() { 
-	struct node *pNode = new node; 
+void insert(Trie *&root, const string &str){
+	if(root == nullptr){
+		root = newNode();
+	}
 
-	pNode->isEndOfWord = false; 
+	Trie *temp = root;
 
-	for (int i = 0; i < ALPHABET_SIZE; i++) 
-		pNode->children[i] = NULL; 
+	for(int i = 0; i < str.length(); i++){
 
-	return pNode; 
-} 
+		char x = str[i];
 
-// If not present, inserts key into trie 
-// If the key is prefix of trie node, just 
-// marks leaf node 
-void insert(struct node *root, string key) { 
-	struct node *pCrawl = root; 
+		if(temp->umap.find(x) == temp->umap.end()){
+			temp->umap[x] = newNode();
+		}
 
-	for (int i = 0; i < key.length(); i++) { 
-		int index = key[i] - 'a'; 
-		if (!pCrawl->children[index]) 
-			pCrawl->children[index] = buildNode(); 
+		temp->lastWord = true;
+	}
+}
 
-		pCrawl = pCrawl->children[index]; 
-	} 
-	// mark last node as leaf 
-	pCrawl->isEndOfWord = true; 
-} 
+bool search(Trie *root, const string &str) {
+	if(root == nullptr)
+		return false;
 
-// Returns true if key presents in trie, else 
-// false 
-bool search(struct node *root, string key) 
-{ 
-	struct node *pCrawl = root; 
+	Trie *temp = root;
 
-	for (int i = 0; i < key.length(); i++) 
-	{ 
-		int index = key[i] - 'a'; 
-		if (!pCrawl->children[index]) 
-			return false; 
+	for (int i = 0; i < str.length(); i++) {
+		temp = temp->umap[str[i]];
+		if(temp == nullptr)
+			return false;
+	}
+	return temp->lastWord;
+}
 
-		pCrawl = pCrawl->children[index]; 
-	} 
+int main(){
+	Trie *root = nullptr;
+	
+	insert(root, "geek");
+	cout << search(root, "geek");
 
-	return (pCrawl != NULL && pCrawl->isEndOfWord); 
-} 
+	insert(root, "for");
+	cout << search(root, "for");
 
-// Driver 
-int main() { 
-	// Input keys (use only 'a' through 'z' 
-	// and lower case) 
-	string keys[] = {"the", "a", "there", "answer", "any", "by", "bye", "their" }; 
-	int n = sizeof(keys)/sizeof(keys[0]); 
-    cout << n;
+	insert(root, "geekk");
+	cout << search(root, "geekk");
 
-	struct node *root = buildNode(); 
+	insert(root, "sci");
+	cout << search(root, "sci");
 
-	// Construct trie 
-	for (int i = 0; i < n; i++) 
-		insert(root, keys[i]); 
-
-	// Search for different keys 
-	search(root, "the")? cout << "Yes\n" : cout << "No\n"; 
-	search(root, "these")? cout << "Yes\n" : cout << "No\n"; 
-
-	return 0; 
-} 
-
+	return 0;
+}
