@@ -30,6 +30,8 @@ int max_profit_DP(int price[], int n){
             ans = max(current_ans, ans);
         }
         dp[len] = ans;
+        cout << endl;
+        cout << ans << ","; 
     }
     return dp[n];
 }
