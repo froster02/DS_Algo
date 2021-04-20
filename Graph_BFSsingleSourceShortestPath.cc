@@ -32,10 +32,10 @@ class graph{
             T node = q.front();
             q.pop();
 
-            for(int i : l[node]){
-                if(dist[i] == INT_MAX){
-                    q.push(i);
-                    dist[i] = dist[node] + 1;
+            for(int nbr : l[node]){
+                if(dist[nbr] == INT_MAX){
+                    q.push(nbr);
+                    dist[nbr] = dist[node] + 1;
                 }
             }
         }
