@@ -20,5 +20,6 @@
     "cSpell.words": [
         "ldiameter",
         "rdiameter"
-    ]
+    ],
+    "C_Cpp.default.includePath": []
 }
