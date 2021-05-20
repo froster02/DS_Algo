@@ -1,46 +1,50 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+#include <stack>
+#include <vector>
 using namespace std;
 
-void printArray(vector<int> arr, int n) {
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-	cout << endl;
-}
+void topohelp(vector<int> graph[], bool visited[], stack<int> &st, int i){
+	visited[i] = true;
+	int n = graph[s].size();
 
-void printSubsequences(vector<int> arr, int index, vector<int> subarr){
-
-	if (index == arr.size()) {
-		int l = subarr.size();
-		if (l != 0)
-			printArray(subarr, l);
-	} else {
-		printSubsequences(arr, index + 1, subarr);
-
-		subarr.push_back(arr[index]);
-
-		printSubsequences(arr, index + 1, subarr);
+	for(int i = 0; i < n; i++){
+		if(!visited[graph[i][j]])
+			topohelp(graph, visited, st, graph[i][j]);
 	}
-	return;
+	st.push(i);
 }
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    vector<int> b;
-    
-    for(int i = 0; i < n; i++){
-        int temp;
-        cin >> temp;
-        a.push_back(temp);
-    }
-    
-    printSubsequences(a, 0, b);
-    
-    return 0;
+void toposort(vector<int> graph[], int v){
+	bool visited[v];
+
+	for(int i = 0; i < v; i++)
+		visited[i] = false;
+	
+	stack<int> st;
+
+	for(int i = 0; i < v; i++){
+		if(!visited[i])
+			topohelp(graph, visited, st, i);
+	}
+
+	whille(!st.empty){
+		cout << st.top() << " ";
+		st.pop();
+	}
 }
 
+int main(){
+
+	int v, e, s, d;
+	vector<int> graph[v];
+	cin >> v >> e;
+
+	for(int i = 0; i < e; i++){
+		cin >> s >> d;
+		graph[s].push_back(d);
+	}
+
+	toposort(graph, v);
+
+	return 0;
+}

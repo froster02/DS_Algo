@@ -3,32 +3,35 @@
 #include <stack>
 using namespace std;
 
+void topologicalSortUtils(vector<int> graph[], bool visited[], stack<int> &st, int i){
+    visited[i] = true;
+    int n = graph[i].size();
+    
+    for(int j = 0; j < n; j++){
+        if(!visited[graph[i][j]]){
+            cout << "graph : " << graph[i][j] << endl;
+            topologicalSortUtils(graph, visited, st, graph[i][j]);
+        }
+    }
+    st.push(i);
+}
+
 void topologicalSort(vector<int> graph[], int V){
     bool visited[V];
-    stack<int> st;
-
+    stack <int> st;
+    
     for(int i = 0; i < V; i++)
         visited[i] = false;
     
     for(int i = 0; i < V; i++){
         if(!visited[i])
-            topologicalSort(graph, visited, st, i);
+            topologicalSortUtils(graph, visited, st, i);
     }
 
-    while (!st.empty()) {
-        cout << st.pop() << " ";
+    while(!st.empty()){
+        cout << st.top() << " ";
         st.pop();
     }
-}
-
-void topologicalSortUtil(vector<int> graph[], bool visited[], stack<int> &st, int i){
-    visited[i] = true;
-    int n = graph[i].size();
-    for(int j = 0; j < n; j++){
-        if(!visited[graph[i][j]])
-            topologicalSortUtil(graph, visited, st, graph[i][j]);
-    }
-    st.push(i);
 }
 
 int main(){
