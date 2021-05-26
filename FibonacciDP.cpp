@@ -1,7 +1,7 @@
 #include <iostream>
 #define max 10000
 using namespace std;
-//CASE 1
+//CASE 1 (recursive)
 int fib(int n, int dp[]){
 	if(n==0 || n==1)
 		return n;
@@ -12,7 +12,7 @@ int fib(int n, int dp[]){
 	int ans = fib(n-1, dp) + fib(n-2, dp);
 		return dp[n] = ans;
 }
-//CASE 2
+//CASE 2 (memorization)
 int fibBU(int n, int dp[]){
 	dp[1] = 1;
 
@@ -21,7 +21,7 @@ int fibBU(int n, int dp[]){
 
 	return dp[n];
 }
-//CASE 3
+//CASE 3 (tabulation)
 int fibSC(int n){
 	if(n==0 || n==1)
 		return n;
