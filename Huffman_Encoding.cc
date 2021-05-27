@@ -15,7 +15,7 @@ void headpify(minHeapElement *a[], int i, int n){
     
     if(c1 < n && a[c1]->freq < a[minElement]->freq)
         minElement = c1;
-    else if(c2 < n && a[c2]->freq < a[minElement]->freq)
+    if(c2 < n && a[c2]->freq < a[minElement]->freq)
         minElement = c2;
     
     if(minElement != i){
