@@ -18,7 +18,7 @@ void unionByWeight(int u, int v, int *parent){
     if(pu != pv){
         if(parent[pu] < parent[pv]){
             parent[pu] += parent[pv];
-            parent[pu] = pu;
+            parent[pv] = pu;
         } else {
             parent[pv] += parent[pu];
             parent[pu] = pv;
@@ -40,7 +40,7 @@ viii kruskals(viii g, int v){
 
     for(int i = 0; i < e; i++){
         s = g[i].second.first;
-        d = g[i].second.first;
+        d = g[i].second.second;
         w = g[i].first;
 
         if(find(s, parent) != find(d, parent)){
