@@ -1,8 +1,3 @@
-/*
-NAME     : ARUSH NAUDIYAL
-ROLL NO. : 12
-SECTION  : C
-*/
 #include<iostream>
 #include<cstring>
 using namespace std;
