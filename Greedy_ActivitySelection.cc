@@ -15,6 +15,7 @@ int main(){
     }
 
     sort(activity.begin(), activity.end());
+    // reverse(activity.begin(), activity.end());
 
     int count = 0, currentEnd = -1;
 
@@ -23,6 +24,7 @@ int main(){
             count++;
             currentEnd = activity[i].first;
         }
+        cout << currentEnd << endl;
     }
 
     cout << count << endl;
