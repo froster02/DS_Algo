@@ -1,61 +1,53 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-#include <complex>
-#include <queue>
-#include <set>
-#include <unordered_set>
-#include <list>
-#include <chrono>
-#include <random>
-#include <iostream>
-#include <algorithm>
-#include <cmath>
-#include <string>
-#include <vector>
-#include <map>
-#include <unordered_map>
-#include <stack>
-#include <iomanip>
-#include <fstream>
-
-using namespace std;
-
-typedef long long ll;
-typedef long double ld;
-typedef pair<int,int> p32;
-typedef pair<ll,ll> p64;
-typedef pair<double,double> pdd;
-typedef vector<ll> v64;
-typedef vector<int> v32;
-typedef vector<vector<int> > vv32;
-typedef vector<vector<ll> > vv64;
-typedef vector<vector<p64> > vvp64;
-typedef vector<p64> vp64;
-typedef vector<p32> vp32;
-ll MOD = 998244353;
-double eps = 1e-12;
-#define forn(i,e) for(ll i = 0; i < e; i++)
-#define forsn(i,s,e) for(ll i = s; i < e; i++)
-#define rforn(i,s) for(ll i = s; i >= 0; i--)
-#define rforsn(i,s,e) for(ll i = s; i >= e; i--)
-#define ln "\n"
-#define dbg(x) cout<<#x<<" = "<<x<<ln
-#define mp make_pair
-#define pb push_back
-#define fi first
-#define se second
-#define INF 2e18
-#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
-#define all(x) (x).begin(), (x).end()
-#define sz(x) ((ll)(x).size())
-
-
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-
-int main(){
-	cout << "Running";
-}
+class NumArray
+{
+public:
+    vector<int> a;
+    vector<int> tree;
+    NumArray(vector<int> &nums) {
+        int n = nums.size();
+        int segment_size = 2 * pow(2, ceil(log2(n))) - 1;
+        tree.resize(segment_size);
+        a = nums;
+        build_tree(0, nums.size() - 1, 0);
+    }
+    void build_tree(int l, int r, int index)
+    {
+        if (l == r) {
+            tree[index] = a[r];
+            return;
+        }
+        int mid = l + (r - l) / 2;
+        build_tree(l, mid, 2 * index + 1);
+        build_tree(mid + 1, r, 2 * index + 2);
+        tree[index] = tree[2 * index + 1] + tree[2 * index + 2];
+    }
+    void update(int index, int val) {
+        update_util(0, a.size() - 1, 0, index, val);
+    }
+    void update_util(int l, int r, int i, int index, int val) {
+        if (l == r && r == index) {
+            tree[i] = val;
+            a[index] = val;
+            return;
+        }
+        int mid = l + (r - l) / 2;
+        if (index <= mid)
+            update_util(l, mid, 2 * i + 1, index, val);
+        else
+            update_util(mid + 1, r, 2 * i + 2, index, val);
+        tree[i] = tree[2 * i + 1] + tree[2 * i + 2];
+    }
+    int sumRange(int left, int right)
+    {
+        return sum_find(0, a.size() - 1, 0, left, right);
+    }
+    int sum_find(int s, int e, int i, int ql, int qr)
+    {
+        if (s > qr || e < ql)
+            return 0;
+        else if (s >= ql && e <= qr)
+            return tree[i];
+        int mid = s + (e - s) / 2;
+        return (sum_find(s, mid, 2 * i + 1, ql, qr) + sum_find(mid + 1, e, 2 * i + 2, ql, qr));
+    }
+};
