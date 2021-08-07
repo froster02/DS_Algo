@@ -1,11 +1,11 @@
-*********************************************************ERROR*********************************************************
+// *********************************************************ERROR*********************************************************
 
 #include <iostream>
 #include <vector>
 #include <cstdio>
 
 #define IO ios_base(false); sync_with_stdio(NULL);
-#define maxm 100
+#define maxi 100
 
 using namespace std;
 
@@ -37,7 +37,7 @@ vector<int > prime_sieve(int * p, int n) {
     return prime;
 }
 
-vector<int > factorize(int m, vector<int > &prime){
+vector<int factorize(int m, vector<int > &prime){
     vector<int > factors;
     factors.clear();
     int ans = 1, i = 0;
