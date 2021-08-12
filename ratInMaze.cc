@@ -29,7 +29,7 @@ bool ratInMaze(char maze[10][10], int solution[][10], int i, int j, int m, int n
         return false;
     }
 
-    //assume solutiontion exist throught current index
+    //assume solution exist throught current index
     solution[i][j] = 1;
 
     //recursive calls for checking weather mice can go Right or Down
