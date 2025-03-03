@@ -1,5 +1,14 @@
-// Approach 1
+// Approach 1 - Brute Force
+/*
+Time Complexity: O(n²)
+- Outer loop runs n-1 times
+- Inner loop runs from i+1 to n
+- Results in quadratic time complexity
 
+Space Complexity: O(1)
+- Only uses a vector 'v' that stores exactly 2 elements
+- Constant extra space regardless of input size
+*/
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
@@ -15,9 +24,18 @@ class Solution {
             }
             return v;
         }
-    };
+};
 
-// Approach 2
+// Approach 2 - Optimized Brute Force
+/*
+Time Complexity: O(n²)
+- Same as Approach 1 with nested loops
+- More concise but still quadratic complexity
+
+Space Complexity: O(1)
+- Only returns a fixed-size array {i,j}
+- No additional data structures used
+*/
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
@@ -30,9 +48,19 @@ class Solution {
             }      
             return {};
         }
-    };
+};
 
-// Approach 3
+// Approach 3 - Hash Map Solution
+/*
+Time Complexity: O(n)
+- Single pass through array
+- Hash map operations (insert/find) are O(1) average case
+- Linear time complexity
+
+Space Complexity: O(n)
+- Uses unordered_map that could store up to n elements
+- Trade-off: uses more space but achieves linear time
+*/
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {
@@ -44,4 +72,4 @@ class Solution {
             }
             return {};
         }
-    };
+};
