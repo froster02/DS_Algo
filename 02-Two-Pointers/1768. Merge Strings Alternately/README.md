@@ -45,4 +45,4 @@ merged: a p b q c   d
 
 ---
 
-Error connecting to AI API: models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Error connecting to AI API: Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
