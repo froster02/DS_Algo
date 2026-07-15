@@ -1,0 +1,1 @@
+SELECT     ROUND(        2        SUM(item_count * order_occurrences) / SUM(order_occurrences),     ) AS average_items_per_orderFROM     Orders;
