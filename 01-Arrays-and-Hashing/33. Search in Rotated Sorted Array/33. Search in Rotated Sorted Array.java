@@ -1,13 +1,1 @@
-1class Solution {
-2    public int search(int[] nums, int target) {
-3        int n = nums.length;
-4
-5        for(int i = 0; i < n; i++){
-6            if(nums[i] == target){
-7                return i;
-8            }
-9        }
-10
-11        return -1;
-12    }
-13}
+            int mid = start + (end - start) / 2;            if(nums[mid] == target)                return mid;            // if the array is rotated, at least one half is always sorted.            // now here I'll figure out which half is sorted            // check if the left half is sorted or the right half            if (nums[start] <= nums[mid]) {                if (nums[start] <= target && target <= nums[mid]) {                    end = mid - 1;                } else {                    start = mid + 1;                }            } else {                if (nums[mid] <= target && target <= nums[end]) {                    start = mid + 1;                } else {                    end = mid - 1;                }            }        }            // left sorted            // right sorted
