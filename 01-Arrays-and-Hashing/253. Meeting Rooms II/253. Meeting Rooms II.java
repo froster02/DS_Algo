@@ -5,13 +5,20 @@
 5
 6        PriorityQueue<Integer> pq = new PriorityQueue<>();
 7
-8        for(int[] it : intervals){
-9            if(!pq.isEmpty() && it[0] >= pq.peek()){
-10                pq.poll();
-11            }
-12            pq.offer(it[1]);
-13        }
+8        for (int[] itr : intervals) {
+9
+10            if (pq.isEmpty()) {
+11                pq.add(itr[1]);
+12                continue;
+13            }
 14
-15        return pq.size();
-16    }
-17}
+15            if (itr[0] >= pq.peek()) {
+16                pq.remove();
+17            }
+18
+19            pq.add(itr[1]);
+20        }
+21
+22        return pq.size();
+23    }
+24}
