@@ -1,0 +1,1 @@
+                ans = left + right;            } else if (left > 0) {                return left + 1;            } else if (right > 0) {                return right + 1;            }        }        return 0;    }    public int findDistance(TreeNode root, int p, int q) {        ans = 0; // reset for this call        solve(root, p, q);        return ans;    }}
