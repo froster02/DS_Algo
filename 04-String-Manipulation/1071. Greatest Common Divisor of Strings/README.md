@@ -48,4 +48,4 @@
 
 ---
 
-Error connecting to AI API: models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Error connecting to AI API: API key not valid. Please pass a valid API key.
