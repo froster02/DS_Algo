@@ -45,4 +45,4 @@ merged: a p b q c   d
 
 ---
 
-Error connecting to AI API: Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+Error connecting to AI API: API key not valid. Please pass a valid API key.
