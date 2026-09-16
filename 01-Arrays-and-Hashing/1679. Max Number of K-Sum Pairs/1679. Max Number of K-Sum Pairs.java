@@ -5,19 +5,19 @@
 5
 6        int n = nums.length;
 7
-8        int l = 0;
-9        int r = n - 1;
-10        int cnt = 0;
+8        int cnt = 0;
+9        int l = 0;
+10        int r = n - 1;
 11
-12        while (l < r) {
-13            if (nums[l] + nums[r] == k) {
-14                l++;
-15                r--;
-16                cnt++;
-17            } else if (nums[l] + nums[r] > k) {
-18                r--;
+12        while(l < r){
+13            if(nums[l] + nums[r] == k){
+14                cnt++;
+15                l++;
+16                r--;
+17            } else if(nums[l] + nums[r] < k){
+18                l++;
 19            } else {
-20                l++;
+20                r--;
 21            }
 22        }
 23
