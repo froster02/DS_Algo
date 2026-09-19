@@ -1,25 +1,31 @@
-1class Solution {
-2    public int longestOnes(int[] nums, int k) {
-3        int n = nums.length;
-4        int left = 0;
-5        int cnt = 0;
-6        int maxi = 0;
-7
-8        for (int i = 0; i < n; i++) {
-9            if (nums[i] == 0) {
-10                cnt++;
-11            }
-12
-13            while (cnt > k) {
-14                if (nums[left] == 0) {
-15                    cnt--;
-16                }
-17                left++;
-18            }
-19
-20            maxi = Math.max(maxi, i - left + 1);
-21        }
-22
-23        return maxi;
-24    }
-25}
+    public int longestOnes(int[] A, int K) {
+        
+        int left = 0,   // start of the window
+        max = 0,        // len of max valid window
+        zeros = 0;      // number of zeros in a window 
+        
+        if(A == null || A.length == 0){
+            return 0;
+        }
+        
+        for(int i = 0 ; i < A.length ; i++){
+            
+            // Increase count of zero whenever you see one
+            if(A[i]==0){
+                zeros++;
+            }
+            
+            // Shrink the window until zeros are equal less than required k
+            while(left <= i && zeros > K){
+                if(A[left] == 0){
+                    zeros--;
+                }   
+                left++;
+            }
+            
+            // At every step record the length of the window
+            max = Math.max(max, i - left +1);
+        } 
+        
+        return max;
+    }
